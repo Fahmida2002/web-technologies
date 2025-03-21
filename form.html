@@ -1,0 +1,183 @@
+<!DOCTYPE  html>
+<html>
+<head>
+	<title>CSS Example</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<div class="box-1">	
+			<h1>Heading One</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		   </p>
+		</div>
+		<div class="box-2">
+			<h1>Heading Two</h1>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			</p>
+		</div>
+
+	<div class="item">
+		<h2>List Items</h2>
+		<ul>
+			<l1><a href="#">Item 1</a></l1>
+			<l1><a href="#">Item 2</a></l1>
+			<l1><a href="#">Item 3</a></l1>
+			<l1><a href="#">Item 4</a></l1>
+			<l1><a href="#">Item 5</a></l1>
+			<l1><a href="#">Item 6</a></l1>
+		</ul>
+	</div>
+
+		<form class="my-form">
+			<div class="form-group">
+				<label>Name: </label>
+				<input type="text" name="name">
+			</div>
+			<div class="form-group">
+				<label>Email: </label>
+				<input type="text" name="email">
+			</div>
+			<div class="form-group">
+				<label>Message: </label>
+				<textarea name="message"></textarea>
+			</div>
+				<input class="button" type="submit" value="Submit" name="">
+		</form>
+		<div class="block">
+			<h3>Block 1</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt</p>
+		</div>
+		<div class="block">
+			<h3>Block 2</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt</p>
+		</div>
+		<div class="block">
+			<h3>Block 3</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt</p>
+		</div>
+		<div class="main-block">
+			<h3>Main Block</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt</p>
+		</div>
+		<div class="sidebar">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt</p>
+		</div>
+</div> <!--Container -->
+
+</body>
+</html>
+
+.............................................................................................................
+
+style.css
+
+body {
+	background: #f0f5f5;
+	color:#555;
+	font-family: Arial, Helvetica, san-serif;
+	font-size: 16px; 
+	font-weight: nomal;
+
+	font: 16px Arial, Helvetica, san-serif; /*short-form*/
+	line-height: 1.6em;
+	margin: 0;
+} 
+.container {
+	width:80%;
+	margin: auto;
+}
+.box-1 {
+	background-color: #333;
+	color: white;
+	border-right: 7px red solid;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-right:20px;
+	padding-bottom: 20px;
+}
+
+.box-1 h1 {
+	text-transform: uppercase;
+	word-spacing: 1em;
+	letter-spacing: 0.4em;
+	font-weight: normal;
+}
+
+.box-2 {
+	border: 3px dotted green;
+	padding: 20px;
+	margin: 20px 0;
+
+}
+
+.item {
+	border: 1px #ccc solid;
+	padding: 10px;
+	border-radius: 15px;
+}
+.item h2 {
+	text-align: center;
+}
+.item ul {
+	padding:15px;
+	padding-left:20px;
+	list-style: none;
+}
+.item a {
+	display: block;
+}
+.my-form {
+	padding: 30px;
+}
+.my-form .form-group {
+	padding: 10px;
+}
+.my-form label {
+	display: block;
+}
+.my-form input[type="text"] {
+	width: 100%;
+	padding: 10px;
+
+}
+.my-form textarea[name="message"] {
+	width: 100%;
+	padding: 10px;
+}
+
+.button {
+	background-color: coral;
+	color: #fff;
+	font-weight: 800;
+	width: 10%;
+}
+.block {
+	float:left;
+	width: 30%;
+	border: 1.5px green dotted;
+	box-sizing: border-box;
+
+}
+.block p, h3 {
+	padding: 15px;
+}
+.main-block {
+	float: left;
+	width: 60%;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.sidebar {
+	float: right;
+	width: 40%;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+<title>Registration Form</title> 
+<style>
+        input {margin:8px 0;display:block;} 
+        .error {color:red;}
+</style>
+</head>
+<body>
+<form onsubmit="return vaildForm()">
+<label>Name:</label
+<input type="text" id= "name" placeholder="Enter name"  />
+<label>Email(student ID):</label>
+<input type="email" id="email" placeholder="e.g., 12345@student.edu" />
+<label>password:</label>
+<input type="password" id="password" placeholder="At least 8 characters "/>
+<label>confirm password:</label>
+<input type="password" id="confirmpassword"placeholder="Re-enter password"/>
+<label>Birth Year:</label>
+<input type="number"id="birthYear"placeholder="e.g.,2000"/>
+<button type="submit">submit</button>
+<p class="error" id="errorMsg"></p>
+ 
+        </form>
+<script> 
+    function vaildateForm() {
+        const name = document.getElement By ID ("name").value.trim();
+        const email = document.getElement By ID ("email").value.trim();
+        const password = document.getElement By ID ("password").value;
+        const confirmpassword = document.getElement BY ID("confirm password").value;
+        const birthYear = parseInt(document.getElement By ID("birthYear").value;
+        const errorMsg = document.getElement By ID("errorMsg");
+        errorMsg.textcontent = " ";
+ 
+        const nameRegex = /^[A-Za-z\s]+$;
+        const emailRegex = /^[0-9]+@student\.edu$/;
+        const currentYear = new Date().getFull Year();
+ 
+        if (!nameRegex.test(name)) {
+            errorMsg.textcontent = "Name must contain only alphabets.";
+            return false;
+        } 
+        if (!emailRegex.test(email)) {
+            errorMsg.textContent = "Email must be a vaild student ID (e.g.,1234@student.edu")."; 
+            return false;
+        } 
+        if (password.lenght < 8) {
+            errorMsg.textcontent = "password must be at least 8 characters long.";
+            return false;
+        }
+ 
+        if (password !== confirm password) {
+            errorMsg.textcontent = "passwords do not match.";
+            return false;
+        }
+        if (isNaN(birthYear) || currentYear - birthYear < 18) {
+            errorMsg.textcontent = "You mustbe at least 18 years old.";
+            return false;
+        }
+        alert("Form submitted successfully");
+        return true;
+ 
+        } 
+</script>
+</body>
+</html>

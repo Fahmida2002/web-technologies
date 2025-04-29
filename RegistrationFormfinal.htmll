@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login & Registration</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      display: flex;
+      width: 900px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .form-section {
+      flex: 1;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .login-section {
+      background-color: #ffeb3b; /* Yellow */
+    }
+
+    .register-section {
+      background-color: #f44336; /* Red */
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      margin-top: 12px;
+      font-weight: bold;
+    }
+
+    input, select {
+      padding: 10px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .register-section input, .register-section select {
+      color: black;
+    }
+
+    .gender-options {
+      margin-top: 5px;
+    }
+
+    .gender-options input {
+      width: auto;
+      margin-right: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      font-weight: bold;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Login Section -->
+  <div class="form-section login-section">
+    <h2>Login</h2>
+    <form>
+      <label for="login-email">Email:</label>
+      <input type="email" id="login-email" placeholder="Enter email" required />
+
+      <label for="login-password">Password:</label>
+      <input type="password" id="login-password" placeholder="Enter password" required />
+
+      <label for="login-dob">Date of Birth:</label>
+      <input type="date" id="login-dob" required />
+
+      <label for="login-country">Country:</label>
+      <select id="login-country" required>
+        <option value="">Select Country</option>
+        <option value="UK">UK</option>
+        <option value="Canada">Canada</option>
+        <option value="Australia">Australia</option>
+      </select>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <!-- Registration Section -->
+  <div class="form-section register-section">
+    <h2>Register</h2>
+    <form>
+      <label for="reg-name">Full Name:</label>
+      <input type="text" id="reg-name" placeholder="Enter full name" required />
+
+      <label for="reg-email">Email:</label>
+      <input type="email" id="reg-email" placeholder="Enter email" required />
+
+      <label for="reg-password">Password:</label>
+      <input type="password" id="reg-password" placeholder="Create password" required />
+
+      <label>Gender:</label>
+      <div class="gender-options">
+        <input type="radio" id="male" name="gender" value="male" required />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required />
+        <label for="female">Female</label>
+      </div>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+

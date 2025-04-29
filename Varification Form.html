@@ -1,0 +1,112 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+</head>
+<body>
+<h2>Registration Form</h2>
+<form action="#" method="POST">
+<!-- Full Name -->
+<label for="fullname">Full Name:</label>
+<input type="text" id="fullname" name="fullname" required><br><br>
+<!-- Email -->
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" required><br><br>
+<!-- Password -->
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required><br><br>
+<!-- Confirm Password -->
+<label for="confirm-password">Confirm Password:</label>
+<input type="password" id="confirm-password" name="confirm-password" required><br><br>
+<!-- Date of Birth -->
+<label for="dob">Date of Birth:</label>
+<input type="date" id="dob" name="dob" required><br><br>
+<!-- Country -->
+<label for="country">Country:</label>
+<select id="country" name="country" required>
+<option value="USA">USA</option>
+<option value="Canada">Canada</option>
+<option value="UK">UK</option>
+<option value="Australia">Australia</option>
+<option value="India">India</option>
+</select><br><br>
+<!-- Gender (Radio Buttons) -->
+<label>Gender:</label>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label>
+<input type="radio" id="other" name="gender" value="other">
+<label for="other">Other</label><br><br>
+<!-- Color Picker -->
+<label for="favcolor">Choose your favorite color:</label>
+<input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+<!-- Text Area -->
+<label for="comments">Additional Comments:</label><br>
+<textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+<!-- Checkbox -->
+<label for="terms">
+<input type="checkbox" id="terms" name="terms" required>
+</label><br><br>
+<!-- Submit Button -->
+<input type="submit" value="Submit"> 
+        input {margin:8px 0;display:block;} 
+        .error {color:red;}
+</style>
+</head>
+<body>
+<form onsubmit="return vaildForm()">
+<label>Name:</label
+<input type="text" id= "name" placeholder="Enter name"  />
+<label>Email(student ID):</label>
+<input type="email" id="email" placeholder="e.g., 12345@student.edu" />
+<label>password:</label>
+<input type="password" id="password" placeholder="At least 8 characters "/>
+<label>confirm password:</label>
+<input type="password" id="confirmpassword"placeholder="Re-enter password"/>
+<label>Birth Year:</label>
+<input type="number"id="birthYear"placeholder="e.g.,2000"/>
+<button type="submit">submit</button>
+<p class="error" id="errorMsg"></p>
+</form>
+<script> 
+    function vaildateForm() {
+    const name = document.getElement By ID ("name").value.trim();
+        const email = document.getElement By ID ("email").value.trim();
+        const password = document.getElement By ID ("password").value;
+        const confirmpassword = document.getElement BY ID("confirm password").value;
+        const birthYear = parseInt(document.getElement By ID("birthYear").value;
+        const errorMsg = document.getElement By ID("errorMsg");
+        errorMsg.textcontent = " ";
+        const nameRegex = /^[A-Za-z\s]+$;
+        const emailRegex = /^[0-9]+@student\.edu$/;
+        const currentYear = new Date().getFull Year();
+        if (!nameRegex.test(name)) {
+            errorMsg.textcontent = "Name must contain only alphabets.";
+            return false;
+        } 
+        if (!emailRegex.test(email)) {
+            errorMsg.textContent = "Email must be a vaild student ID (e.g.,1234@student.edu")."; 
+            return false;
+        } 
+        if (password.lenght < 8) {
+            errorMsg.textcontent = "password must be at least 8 characters long.";
+            return false;
+        }
+ 
+        if (password !== confirm password) {
+            errorMsg.textcontent = "passwords do not match.";
+            return false;
+        }
+        if (isNaN(birthYear) || currentYear - birthYear < 18) {
+            errorMsg.textcontent = "You mustbe at least 18 years old.";
+            return false;
+        }
+        alert("Form submitted successfully");
+        return true;
+        } 
+</script>
+</body>
+</html>

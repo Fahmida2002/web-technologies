@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Process</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 80px);
+    }
+
+    .left-section {
+      flex: 1;
+      background-color: #ff4d4d; /* Red */
+      padding: 30px;
+      box-sizing: border-box;
+      color: white;
+    }
+
+    .right-section {
+      flex: 1;
+      background-color: #ffff99; /* Yellow */
+      padding: 30px;
+      box-sizing: border-box;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+
+    input, select {
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 4px;
+    }
+
+    input[type="color"] {
+      padding: 2px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    .login-form {
+      margin-bottom: 30px;
+    }
+
+    .margin-section {
+      display: flex;
+      gap: 20px;
+    }
+
+    .margin-section div {
+      flex: 1;
+      background-color: white;
+      padding: 10px;
+      border-radius: 5px;
+      color: black;
+    }
+
+    .margin-section div h3 {
+      margin: 0 0 10px;
+      text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Registration Process</h1>
+
+  <div class="container">
+    <!-- Registration (Left Side) -->
+    <div class="left-section">
+      <h2>Registration</h2>
+      <form>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required />
+
+        <label for="email">User Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"
+               password pattern="[A-Za-z0-9]{5}";
+               title="Exactly 5 characters(zinia)" required />
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+          <option value="">Select</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Other</option>
+        </select>
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">Select</option>
+          <option>Canada</option>
+          <option>Australia</option>
+        </select>
+
+        <label for="color">Favourite Colour:</label>
+        <input type="color" id="color" name="color" />
+
+        <label for="other">Other:</label>
+        <input type="text" id="other" name="other" />
+
+        <button type="submit">Register</button>
+      </form>
+    </div>
+
+    <!-- Login (Right Side) -->
+    <div class="right-section">
+      <h2>Login</h2>
+      <form class="login-form">
+        <label for="loginUsername">Username:</label>
+        <input type="text" id="loginUsername" name="loginUsername" required />
+
+        <label for="loginEmail">Email:</label>
+        <input type="email" id="loginEmail" name="loginEmail" required />
+
+        <label for="loginPassword">Password:</label>
+        <input type="password" id="loginPassword" name="loginPassword" required />
+
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Margin Section -->
+      <div class="margin-section">
+        <div>
+          <h3>City</h3>
+          <p>Toronto</p>
+          <p>Sydney</p>
+          <p>Melbourne</p>
+        </div>
+        <div>
+          <h3>AQI</h3>
+          <p>42</p>
+          <p>58</p>
+          <p>61</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
+

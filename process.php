@@ -11,9 +11,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['color']   = $_POST['color']   ?? '#ffffff';
         $_SESSION['opinion'] = $_POST['opinion'] ?? 'Not Provided';
         $_SESSION['agree']   = isset($_POST['tc']) ? 'Yes' : 'No';
-        $_SESSION['password'] = $_POST['password'] ?? '';
+        $_SESSION['password'] = $_POST['upass'] ?? '';
 
-        setcookie('bgcolor', $_SESSION['color']);
+      
+        $user_cookie_key = 'bgcolor_' . md5($_SESSION['uname']);
+        setcookie($user_cookie_key, $_SESSION['color'], time() + (86400 * 30)); 
 
         // Show confirmation page
         echo '<form method="POST">';
@@ -66,7 +68,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 VALUES ('$name', '$email', '$dob', '$country', '$gender', '$opinion', '$agree', '$password_hash')";
 
         if (mysqli_query($con, $sql)) {
-            echo '<div style="border:1px solid #333; padding:20px; width:400px; margin:auto; margin-top:50px; font-family:Arial,Helvetica, sans-serif;">';
+            // Retrieve user-specific bgcolor cookie
+            $user_cookie_key = 'bgcolor_' . md5($email);
+            $bgcolor = $_COOKIE[$user_cookie_key] ?? '#ffffff';
+
+           echo '<div style="border:1px solid #333; padding:20px; width:400px; margin:auto; margin-top:50px; font-family:Arial,Helvetica, sans-serif;">';
             echo "<h2 style='text-align:center;'>Registration Completed</h2>";
             echo "Thank you, " . htmlspecialchars($name) . "! Your information has been saved.<br><br>";
             echo '<div style="text-align:center;"><a href="index.html"><button style="padding:10px 20px; font-size:16px;">Go to Home</button></a></div>';

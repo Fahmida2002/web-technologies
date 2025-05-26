@@ -78,10 +78,53 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         input[type="submit"]:hover {
             background: #0056b3;
         }
+        /* User menu styles */
+.user-menu {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.user-menu img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.user-menu span {
+    color: #333;
+    font-weight: bold;
+}
+.user-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+.user-menu a.profile-link {
+    background-color: #007BFF;
+}
+.user-menu a.logout-link {
+    background-color: #333;
+}
+
     </style>
 </head>
 <body>
+   <?php
+$username = $_SESSION['uname'] ?? 'Guest';
+?>
+<div class="user-menu">
+    <img src="Logo.png" alt="User Icon">
+    <span><?php echo htmlspecialchars($username); ?></span>
+    <a class="profile-link" href="profile.php?return=request.php">Profile</a>
+    <a class="logout-link" href="logout.php">Logout</a>
+</div>
+
 <div class="form-box">
+    
     <h2>Select Cities</h2>
      <?php
     if (isset($_SESSION['error'])) {

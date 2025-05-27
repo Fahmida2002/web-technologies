@@ -1,12 +1,12 @@
 <?php
 session_start();
 $username = $_SESSION['uname'] ?? null;
+
 if (!$username) {
     // Not logged in, redirect or show message
     header("Location: index.html");
     exit();
 }
-
 // Connect to DB
 $con = mysqli_connect("localhost", "root", "", "AQI");
 if (!$con) {
@@ -137,7 +137,6 @@ if (!$result_cities) {
 </style>
 </head>
 <body>
-
 <!-- Top right user menu -->
 <div class="user-menu">
     <img src="Logo.png" alt="User Icon">
@@ -145,8 +144,6 @@ if (!$result_cities) {
     <a class="profile-link" href="profile.php?return=showaqi.php">Profile</a>
     <a class="logout-link" href="logout.php">Logout</a>
 </div>
-
-
 
 <!-- AQI Table -->
 <h2>Air Quality Index (AQI) of Selected Cities</h2>
@@ -177,27 +174,8 @@ if (!$result_cities) {
             echo "<tr><td>&nbsp;</td><td></td><td></td></tr>";
         }
         ?>
-        
     </tbody>
 </table>
-<!-- User Profile Section -->
-<?php if ($user): ?>
-    <h2>Your Profile</h2>
-    <div class="profile-info">
-        <dl>
-            <dt>Name:</dt><dd><?= htmlspecialchars($user['Name']) ?></dd>
-            <dt>Email:</dt><dd><?= htmlspecialchars($user['Email']) ?></dd>
-            <dt>Date of Birth:</dt><dd><?= htmlspecialchars($user['DOB']) ?></dd>
-            <dt>Country:</dt><dd><?= htmlspecialchars($user['Country']) ?></dd>
-            <dt>Gender:</dt><dd><?= htmlspecialchars($user['Gender']) ?></dd>
-            <dt>Opinion:</dt><dd><?= nl2br(htmlspecialchars($user['Opinion'])) ?></dd>
-            <dt>Agreed to Terms:</dt><dd><?= htmlspecialchars($user['AgreeTC']) ?></dd>
-        </dl>
-    </div>
-<?php else: ?>
-    <p style="text-align:center; color:red;">User information not found.</p>
-<?php endif; ?>
-
 </body>
 </html>
 <?php mysqli_close($con); ?>
